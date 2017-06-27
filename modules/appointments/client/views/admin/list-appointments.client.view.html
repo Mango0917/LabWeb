@@ -1,0 +1,60 @@
+<section>
+<div>
+	<section id="directives-calendar">
+		<div class="row">
+			<h1 class="col-md-12">
+				<p class="col-md-4">Lab Calendar</p>
+				<div class="col-md-2 col-md-offset-1">
+					<button class="btn btn-success" ng-click="changeView('agendaWeek', 'MainCalendar')">Week</button>
+					<button class="btn btn-success" ng-click="changeView('month', 'MainCalendar')">Month</button>
+				</div>
+				<div class="col-md-1 col-md-offset-3">
+					<button type="button" class="btn btn-primary" ui-sref="admin.appointment-add">Add Appointment</button>
+				</div>
+			</h1>
+		</div>
+		<div class="well">
+			<div class="row-fluid">
+				<div class="row">
+					<div class="alert-success calAlert" ng-show="alertMessage != undefined && alertMessage != ''">
+						<h4>{{alertMessage}}</h4>
+					</div>
+					<div class="calendar" ng-model="eventSources" calendar="MainCalendar" ui-calendar="uiConfig.calendar"></div>
+				</div>
+
+				<hr>
+
+				<div class="row">
+					<div class="col-md-6">
+						<div class="pad-col row">
+							<div class="alert-success calAlert" ng-show="alertMessage != undefined && alertMessage != ''">
+								<h4>{{alertMessage}}</h4>
+							</div>
+							<div class="calendar" ng-model="eventSources" calendar="DayCalendar" ui-calendar="uiConfig.calendar"></div>
+						</div>
+					</div>
+					
+					<div class="col-md-6">
+						<div class="pad-col row">
+							<h2 align="center">Appointments List</h2>
+							<input class="form-control" type="text" ng-model="search" placeholder="Search" ng-change="figureOutItemsToDisplay()" />
+						</div>
+						<hr>
+
+						<div class="pad-col row">
+							<div class="list-group">
+								<a ng-repeat="appointment in pagedItems" ui-sref="admin.appointment({appointmentId: appointment._id})" class="list-group-item">
+								<p class="list-group-item-text pull-right small" ng-bind="appointment.time"></p>
+								<p class="list-group-item-text" ng-bind="appointment.participant.name"></p>
+								</a>
+							</div>
+
+							<pagination boundary-links="true" max-size="8" items-per-page="itemsPerPage" total-items="filterLength" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</div>
+</section>

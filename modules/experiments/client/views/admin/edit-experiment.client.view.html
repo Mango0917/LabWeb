@@ -1,0 +1,67 @@
+<section>
+  <div class="page-header">
+    <!-- Add the following lines everywhere you DISPLAY a singular experiment (with condition) -->
+    <h1 ng-bind ="experiment.display_name"></h1>
+    <!-- or iterate the conditions and format how you would like -->
+    <!-- <h2 ng-repeat="cond in experiment.experiment_conditions"> {{cond}} </h2> -->
+  </div>
+  <div class="col-md-12">
+    <form name="experimentForm" ng-submit="update(experimentForm.$valid)" class="signin" novalidate autocomplete="off">
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label for="firstName">Experiment Name</label>
+          <input type="text" id="Name" name="Name" class="form-control" ng-model="experiment.experiment_name" placeholder="Name" required>
+          <div ng-messages="experimentForm.firstName.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Name is required.</p>
+          </div>
+        </div>
+        
+        <!--show the original conditions with a button to add, update, reset -->
+        <div ng-show="!edit_conditions" class="form-group" >
+          <label>Experiment Conditions:</label>
+          <table>
+            <tr ng-repeat="co in experiment.experiment_conditions">
+              <td><span>{{co}}</span></tr>
+            </tr>
+          </table>
+          <button type="button" class="btn btn-small" ng-click="resetLocalConditions()">edit</button>
+        </div>
+        <!-- experiment condition control -->
+        <div ng-show="edit_conditions" class="form-group" >
+          <label for="expCond">Experiment Conditions</label>
+          
+          <table> <!-- ng-init="resetLocalConditions()" -->
+            <tr ng-repeat = "cond in localConditions">
+              <td><button type="button" class="btn btn-small" ng-click="deleteLocalCondition($index)" > X </button></td>
+              <td><p ng-bind="cond"></p></td>
+            </tr>
+            
+          </table>
+          
+          <!-- Add one temporarily to the list -->
+          <input type="text" id="expCond" name="expCond" class="form-control" ng-model="new_condition_to_add" placeholder="Add a condition">
+          <button type="button" class="btn" ng-click="addLocalCondition()">+</button>
+          <button type="button" class="btn btn-danger" ng-click="resetLocalConditions()">Reset</button>
+          
+        </div>
+
+        <div class="form-group" show-errors>
+          <label for="glasses">Requires Eyeglasses?</label>
+          <div class="radio">
+            <label><input type="radio" name="optradio" ng-model="experiment.requires_eyeglasses" ng-value="true">Yes</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="optradio" ng-model="experiment.requires_eyeglasses" ng-value="false">No</label>
+          </div>
+        </div>
+        
+        <div class="text-center form-group">
+          <button type="submit" class="btn btn-primary">Update Experiment</button>          
+        </div>
+        <div ng-show="error" class="text-center text-danger">
+          <strong ng-bind="error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

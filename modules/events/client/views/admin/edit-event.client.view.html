@@ -1,0 +1,40 @@
+﻿<section>
+    <div class="page-header">
+        <h1>Moment <span ng-bind="event.title"></span></h1>
+    </div>
+    <div class="col-md-12">
+        <form name="eventForm" novalidate>
+            <fieldset>
+                <div class="form-group" show-errors>
+                    <label for="title">Title</label>
+                    <input type="text" id="titlee" name="title" class="form-control" ng-model="event.title" placeholder="Title" required />
+                    <div ng-messages="eventForm.title.$error" role="alert">
+                        <p class="help-block error-text" ng-message="required">Title is required.</p>
+                    </div>
+                </div>
+                <div class="form-group" show-errors>
+                    <label for="description">Description</label>
+                    <input type="text" id="description" name="description" class="form-control" ng-model="event.description" placeholder="Description" required />
+                    <div ng-messages="eventForm.description.$error" role="alert">
+                        <p class="help-block error-text" ng-message="required">Description is required.</p>
+                    </div>
+                </div>
+                <div class="form-group text-center">
+                  <img ng-src="{{event.image}}" alt="{{event}}" class="img-thumbnail user-profile-picture">
+                </div>
+                <div class="text-center form-group" ng-hide="uploader.queue.length">
+                  <span class="btn btn-default btn-file">
+                      Select Image <input type="file" nv-file-select uploader="uploader" required>
+                  </span>
+                </div>
+               
+                <div class="text-center form-group">
+                    <button ng-click="uploadProfilePicture();" class="btn btn-primary">Edit Moment</button>
+                </div>
+                <div ng-show="error" class="text-center text-danger">
+                    <strong ng-bind="error"></strong>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</section>

@@ -1,0 +1,38 @@
+﻿<div ng-controller="addEventController">
+    <h3 class="col-md-12 text-center">Add Moment</h3>
+    <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
+        <form name="eventForm" ng-submit="uploadProfilePicture()" autocomplete="off">
+            <fieldset>
+                <div class="form-group" show-errors>
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" class="form-control" ng-model="credentials.title" placeholder="Title" required>
+                    <div ng-messages="eventForm.title.$error" role="alert">
+                        <p class="help-block error-text" ng-message="required">Title is required.</p>
+                    </div>
+                </div>
+                        <div class="form-group text-center">
+                          <img ng-src="{{imageURL}}" alt="{{user.displayName}}" class="img-thumbnail user-profile-picture">
+                        </div>
+                        <div class="text-center form-group" ng-hide="uploader.queue.length">
+                          <span class="btn btn-default btn-file">
+                              Select Image <input type="file" nv-file-select uploader="uploader" required>
+                          </span>
+                        </div>
+                        
+                <div class="form-group" show-errors>
+                    <label for="description">Description</label>
+                    <input type="text" id="description" name="description" class="form-control" ng-model="credentials.description" placeholder="Description" required>
+                    <div ng-messages="eventForm.description.$error" role="alert">
+                        <p class="help-block error-text" ng-message="required">Description is required.</p>
+                    </div>
+                </div>
+                <div class="text-center form-group">
+                    <button type="submit" class="btn btn-primary">Add Moment</button>
+                </div>
+                <div ng-show="error" class="text-center text-danger">
+                    <strong ng-bind="error"></strong>
+                </div>
+            </fieldset> 
+        </form> 
+    </div>
+</div>

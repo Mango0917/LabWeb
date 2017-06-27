@@ -1,0 +1,59 @@
+<div>
+  <h3 class="col-md-12 text-center">New Appointment</h3>
+  <div class="appointmentSection col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
+    <form name="appointmentForm" ng-submit="addAppointment(appointmentForm.$valid)" class="signin" novalidate autocomplete="off">
+      <fieldset>
+		<div class="form-group">
+			<div class='input-group date' id='datetimepicker11'>
+				<input type='text' class="form-control" />
+				<span class="input-group-addon">
+					<span class="glyphicon glyphicon-calendar">
+					</span>
+				</span>
+			</div>
+		</div>
+        <div class="form-group" show-errors>
+          <label for="location">Appointment Location:</label>
+          <input type="text" id="location" name="location" class="form-control" ng-model="credentials.location" placeholder="Location" required>
+          <div ng-messages="appointmentForm.location.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Location is required.</p>
+          </div>
+        </div>
+		<div class="form-group" show_errors>
+			<label for="duration">Duration (in minutes):</label>
+			<input type='number' name="duration"  class="form-control" ng-model="credentials.duration" required/>
+          <div ng-messages="appointmentForm.duration.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Duration is required.
+          </div>
+		</div>
+        <div class="form-group" show-errors>
+          <label for="participant">Participant</label>
+		  <select name="participant" ng-model="credentials.participant" required>
+		    <option ng-repeat="participant in participants" value="{{participant._id}}">{{participant.name}}</option>
+		  </select>
+          <div ng-messages="appointmentForm.participant.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Participant is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="experiment">Experiment</label>
+		  <select name="experiment" ng-model="credentials.experiment" required>
+			<option ng-repeat="experiment in experiments" value="{{experiment._id}}">
+			{{experiment.experiment_name}}: {{experiment.experiment_conditions}}
+			</option>
+		  </select>
+          <div ng-messages="appointmentForm.experiment.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Experiment is required.
+		  </div>
+        </div>
+		
+        <div class="text-center form-group">
+          <button type="submit" class="btn btn-primary">Add Appointment</button>
+        </div>
+        <div ng-show="error" class="text-center text-danger">
+          <strong ng-bind="error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

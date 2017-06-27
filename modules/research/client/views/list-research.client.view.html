@@ -1,0 +1,28 @@
+<section>
+  <div class="page-header">
+    <div class="row">
+      <div class="col-md-4">
+        <h1>Research</h1>
+      </div>
+      <div class="col-md-4" style="margin-top: 2em">
+        <input class="form-control col-md-4" type="text" ng-model="search" placeholder="Search" ng-change="figureOutItemsToDisplay()" />
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1">
+    <div class="researchSection row" ng-repeat="research in pagedItems" ui-sref="core.research({researchId: research._id})">
+      <div class="col-md-6 col-md-offset-1">
+        <h4 ng-bind="research.title"></h4>
+        <p ng-bind="research.created_at"></p>
+        <p class = "content" ng-bind="research.content"></p>
+      </div>
+      <div class="col-md-4">
+        <div class="researchImgContainer">
+          <img class ="researchImg" ng-src= {{research.image}}>
+        </div>
+      </div>      
+    </div>
+  </div>
+  <pagination boundary-links="true" max-size="8" items-per-page="itemsPerPage" total-items="filterLength" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+
+</section>

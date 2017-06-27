@@ -1,0 +1,52 @@
+<div>
+	<h3 class="col-md-12 text-center">Edit {{appointment.participant.name}}'s Appointment</h3>
+  <div class="appointmentSection col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
+    <form name="appointmentForm" ng-submit="update(appointmentForm.$valid)" class="signin" novalidate autocomplete="off">
+      <fieldset>
+		<div class="form-group">
+			<div class='input-group date' id='datetimepicker11'>
+				<input type='text' class="form-control" value="{{appointment.prettyDate}}" ng-model="appointment.time"/>
+				<span class="input-group-addon">
+					<span class="glyphicon glyphicon-calendar">
+					</span>
+				</span>
+			</div>
+			<p><i>Previous: </i>{{appointment.prettyDate}}</p>
+		</div>
+
+		<div class="form-group" show_errors>
+			<label for="duration">Duration (in minutes):</label>
+			<input type='number' name="duration" class="form-control" ng-model="appointment.duration" required/>
+          <div ng-messages="appointmentForm.duration.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Duration is required.
+          </div>
+		</div>
+
+        <div class="form-group" show-errors>
+          <label for="experiment">Experiment:</label>
+		  <select name="experiment" ng-model="appointment.experiment" required>
+			  <option ng-repeat="experiment in experiments" value="{{experiment._id}}">
+			  {{experiment.experiment_name}}: {{experiment.experiment_conditions}}
+			  </option>
+		  </select>
+          <div ng-messages="appointmentForm.experiment.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Experiment is required.
+          </div>
+		  <p><i>Previous: </i>{{prevExperimentName}}: {{prevExperimentConditions}}</p>
+        </div>
+
+        <div class="form-group">
+          <label for="comments">Comments:</label>
+			<textarea class="form-control" placeholder="Enter your message here" ng-model="appointment.comments"></textarea>
+        </div>
+		
+        <div class="text-center form-group">
+          <button type="submit" class="btn btn-primary">Update Appointment</button>
+        </div>
+        <div ng-show="error" class="text-center text-danger">
+          <strong ng-bind="error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

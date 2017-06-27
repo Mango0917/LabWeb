@@ -1,0 +1,32 @@
+<section>
+  <div class="page-header">
+    <div class="row">
+      <div class="col-md-4">
+        <h1>Participants</h1>
+      </div>
+      <div class="col-md-4" style="margin-top: 2em">
+        <input class="form-control col-md-4" type="text" ng-model="search" placeholder="Search by an attribute" ng-change="figureOutItemsToDisplay()" />
+      </div>
+      <div class="col-md-4" style="margin-top: 2em">
+        <input class="form-control col-md-4" type="text" ng-model="search2" placeholder="Filter by experiment name" ng-change="figureOutItemsToDisplay()" />
+      </div>
+      <div class="col-md-4" style="margin-top: 2em">
+        <input class="form-control col-md-4" type="text" ng-model="search3" placeholder="Filter by experiment condition" ng-change="figureOutItemsToDisplay()" />
+      </div>
+    </div>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="participant in pagedItems" ui-sref="admin.participant({participantId: participant._id})" class="list-group-item">
+      <h4 class="list-group-item-heading" ng-bind="participant.name"></h4>
+      <p class="list-group-item-text pull-right small" ng-bind="participant.phone_number"></p>
+      <p class="list-group-item-text" ng-bind="participant.email"></p>
+    </a>
+  </div>
+
+  <pagination boundary-links="true" max-size="8" items-per-page="itemsPerPage" total-items="filterLength" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+  <div class="container">
+	<div class="row">
+		<button class="btn-primary" ui-sref="authentication.addParticipant">Add Participant</button>
+	</div>
+  </div>
+</section>

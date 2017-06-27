@@ -1,0 +1,32 @@
+<section>
+  <div class="page-header">
+    <h1>Audio File<span ng-bind="audioFile.name"></span></h1>
+  </div>
+  <div class="col-md-12">
+    <form name="audioFileForm" ng-submit="update(audioFileForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label for="name">File Name</label>
+          <input type="text" id="name" name="name" class="form-control" ng-model="audioFile.title" placeholder="File Name" required />
+          <div ng-messages="audioFileForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">audio file name is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="filePath">File Path</label>
+          <input type="text" id="filePath" name="filePath" class="form-control" ng-model="audioFile.filePath" placeholder="Link location" required />
+          <div ng-messages="audioFileForm.filePath.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Link is required.</p>
+          </div>
+        </div>
+       
+        <div class="form-group">
+          <input type="submit" value="Update" class="btn btn-default">
+        </div>
+        <div ng-show="error" class="text-danger">
+          <strong ng-bind="error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>

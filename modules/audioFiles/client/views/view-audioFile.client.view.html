@@ -1,0 +1,26 @@
+<section>
+  <div class="page-header">
+    <div class="row">
+      <div class="col-md-6">
+        <h1 ng-bind="audioFile.name"></h1>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="row">
+        <div class="col-md-3"><strong>Audio file Name</strong></div>
+        <div class="col-md-6" ng-bind="audioFile.title"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Audio file link</strong></div>
+        <div class="col-md-6" > <a ng-href="audioFile.filePath">{{audioFile.filePath}}</div>
+      </div>
+      <hr/>
+     
+    </div>
+  </div>
+</section>

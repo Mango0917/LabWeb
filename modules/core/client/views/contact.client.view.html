@@ -1,0 +1,58 @@
+<section class="contact" ng-controller="ContactController">
+    <div class="row">
+
+        <!--Google maps pane-->
+        <div class="mapSection col-md-5 col-md-offset-1">
+            <h1 class="spaced-out header">Lab Location</h1>
+			<div id="map" class="row">
+				<div  map-lazy-load="https://maps.google.com/maps/api/js">
+					<ng-map center="29.648133, -82.344044" zoom="17">
+						<marker position="29.648133, -82.344044" on-click = "openGoogleMaps()">
+						</marker>
+					</ng-map>
+				</div>
+			</div>
+			<div class="row">
+				<p class="mapCaption">E313A CSE Building, University of Florida, Gainesville, FL 32611</p>
+			</div>
+        </div>
+
+        <!--Contact pane-->
+        <div class="col-md-4">
+            <h1 class="spaced-out header">Contact Us</h1>
+			<div class="contactSection">
+				<div class="row">
+					<h5>Interested in participating in our experiments or learning more about our work? Contact us!</h5>
+				</div>
+				<div class="row">
+                    <!--Email form-->
+					<form id="emailForm" class="form-group" ng-submit="sendMail()">
+
+                        <!--ReCAPTCHA div: key is public key, ng-model stores response in that scoped variable, and setResponse is called when captcha is resolved-->
+                        <div vc-recaptcha 
+                             key="'6LdW_hwTAAAAAN1J8l7A3gniCRA930e0OtvIf7j8'"
+                             ng-model="captcha"
+                             on-success="setResponse(response)"
+                        ></div>
+                        
+						<label class="col-md-12">Name:
+							<input  class="form-control" type="text" placeholder="John Doe" ng-model="name">
+						</label>
+						<label class="col-md-12">Email:
+							<input  class="form-control" type="text" placeholder="here@example.com"  ng-model="email">
+						</label>
+						<p class="message">
+							<label class="col-md-12">Message:
+							<textarea class="form-control" placeholder="Enter your message here" ng-model="msg"></textarea>
+							</label>
+						</p>
+						<label class="col-md-12">
+							<button type="submit" class="col-md-12 btn btn-default">Submit</button>
+						</label>
+					</form>
+				</div>
+			</div>
+        </div>
+
+    </div>
+</section>

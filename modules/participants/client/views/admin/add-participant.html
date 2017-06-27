@@ -1,0 +1,128 @@
+<div ng-controller="addParticipantController">
+  <h3 class="col-md-12 text-center">Add Participant</h3>
+  <div class="col-xs-offset-2 col-xs-8 col-md-offset-4 col-md-4">
+    <form name="participantForm" ng-submit="addParticipant(participantForm.$valid)" class="signin" novalidate autocomplete="off">
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label for="firstName">Name</label>
+          <input type="text" id="Name" name="Name" class="form-control" ng-model="credentials.name" placeholder="Name" required>
+          <div ng-messages="participantForm.firstName.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Name is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="phoneNumber">Phone number</label>
+          <input type="number" id="phoneNumber" name="phoneNumber" class="form-control" ng-model="credentials.phone_number" placeholder="Phone number" required>
+          <div ng-messages="participantForm.phoneNumber.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Phone number is required.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-control" ng-model="credentials.email" placeholder="Email"  required>
+          <div ng-messages="participantForm.email.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Email address is required.</p>
+            <p class="help-block error-text" ng-message="email">Email address is invalid.</p>
+          </div>
+        </div>
+		<div id='#datetimepicker12' class="form-group" show errors>
+		  <label for="dob">Date of Birth</label>
+			<div class='input-group date' id='datetimepicker12'>
+				<input type='text' class="form-control" />
+				<span class="input-group-addon">
+					<span class="glyphicon glyphicon-calendar">
+					</span>
+				</span>
+			</div>
+          <div ng-messages="participantForm.dob.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Date of Birth is required</p>
+          </div>
+		</div>
+		<div class="form-group" id='#datetimepicker13'>
+		  <label for="paid">Last Paid</label>
+			<div class='input-group date' id='datetimepicker13'>
+				<input type='text' class="form-control" />
+				<span class="input-group-addon">
+					<span class="glyphicon glyphicon-calendar">
+					</span>
+				</span>
+			</div>
+		</div>
+        <div class="form-group" show-errors>
+          <label for="gender">Gender</label>
+            <input type="text" id="gender" name="gender" class="form-control" ng-model="credentials.gender" placeholder="gender">
+          <div ng-messages="participantForm.gender.$error" role="alert">
+            <p class="help-block error-text" ng-message="gender">Gender is invalid.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="card_info">Card Info</label>
+          <input type="text" id="card_info" name="card_info" class="form-control" ng-model="credentials.card_info" placeholder="card info">
+          <div ng-messages="participantForm.card_info.$error" role="alert">
+            <p class="help-block error-text" ng-message="card_info">Card Info is invalid.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="comment">Comment</label>
+          <input type="text" id="comment" name="comment" class="form-control" ng-model="credentials.comment" placeholder="participant comments">
+          <div ng-messages="participantForm.comment.$error" role="alert">
+            <p class="help-block error-text" ng-message="comment">Comment is invalid.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="subject_id">Subject Id</label>
+          <input type="number" id="subjectid" name="subid" class="form-control" ng-model="credentials.subject_id" placeholder="Subject Id">
+          <div ng-messages="participantForm.subject_id.$error" role="alert">
+            <p class="help-block error-text" ng-message="subject_id">Subject ID is invalid.</p>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="contact_lenses">Contact Lenses?</label>
+          <div class="radio">
+            <label><input type="radio" name="optradio" ng-model="credentials.contact_lenses" ng-value="true">Yes</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="optradio" ng-model="credentials.contact_lenses" ng-value="false">No</label>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="HRTF">HRTF assigned:</label>
+          <input type="text" id="subjectid" name="subid" class="form-control" ng-model="credentials.HRTF_assigned" placeholder="HRTF" >
+        </div>
+        <div class="form-group" show-errors>
+          <label for="corrective_lenses">Corrective Lenses?</label>
+          <div class="radio">
+            <label><input type="radio" name="optradio1" ng-model="credentials.corrective_lenses" ng-value="true">Yes</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="optradio1" ng-model="credentials.corrective_lenses" ng-value="false">No</label>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="vision_test">Vision Test?</label>
+          <div class="radio">
+            <label><input type="radio" name="optradio2" ng-model="credentials.vision_test" ng-value="true">Yes</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="optradio2" ng-model="credentials.vision_test" ng-value="false">No</label>
+          </div>
+        </div>
+        <div class="form-group" show-errors>
+          <label for="took_audiogram">Took Audiogram?</label>
+          <div class="radio">
+            <label><input type="radio" name="optradio3" ng-model="credentials.took_audiogram" ng-value="true">Yes</label>
+          </div>
+          <div class="radio">
+            <label><input type="radio" name="optradio3" ng-model="credentials.took_audiogram" ng-value="false">No</label>
+          </div>
+        </div>
+        <div class="text-center form-group">
+          <button type="submit" class="btn btn-primary">Add Participant</button>
+        </div>
+        <div ng-show="error" class="text-center text-danger">
+          <strong ng-bind="error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

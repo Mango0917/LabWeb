@@ -1,0 +1,26 @@
+<section>
+  <div class="page-header">
+    <div class="row">
+      <div class="col-md-4">
+        <h1>Publications</h1>
+      </div>
+      <div class="col-md-4" style="margin-top: 2em">
+        <input class="form-control col-md-4" type="text" ng-model="search" placeholder="Search" ng-change="figureOutItemsToDisplay()" />
+      </div>
+    </div>
+  </div>
+  <div class="list-group">
+      <a ng-repeat="publication in pagedItems" ui-sref="admin.publication({publicationId: publication._id})" class="list-group-item">
+          <h4 class="list-group-item-heading" ng-bind="publication.title"></h4>
+
+          <p class="list-group-item-text" ng-bind="publication.information"></p>
+      </a>
+  </div>
+
+  <pagination boundary-links="true" max-size="8" items-per-page="itemsPerPage" total-items="filterLength" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+  <div class="container">
+	<div class="row">
+		<button class="btn-primary" ui-sref="authentication.addPublication">Add Publication</button>
+	</div>
+  </div>
+</section>

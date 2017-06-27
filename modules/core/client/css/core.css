@@ -1,0 +1,66 @@
+/*Default MEAN*/
+
+.undecorated-link:hover {
+  text-decoration: none;
+}
+[ng\:cloak],
+[ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}
+.header-profile-image {
+  opacity: 0.8;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+.open .header-profile-image,
+a:hover .header-profile-image {
+  opacity: 1;
+}
+.user-header-dropdown-toggle {
+}
+.error-text {
+  display: none;
+}
+.has-error .help-block.error-text {
+  display: block;
+}
+.has-error .help-inline.error-text {
+  display: inline;
+}
+
+.index-section{
+	padding-top: 100px;
+}
+
+/*Custom CSS for Core View*/
+
+.header-wrapper
+{
+    padding-bottom: 120px;
+}
+
+.spaced-out{
+	letter-spacing: 1pt;
+}
+
+
+#footer{
+  padding: 15px;
+  clear: both;
+}
+#footer span{
+  text-align:center;
+}
+#footer a{
+  text-decoration: none;
+}
+
+#footer-nav a{
+  cursor: pointer;
+  margin: 10px;
+}

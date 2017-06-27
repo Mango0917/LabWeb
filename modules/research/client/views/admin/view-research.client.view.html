@@ -1,0 +1,45 @@
+﻿<section class='aboutSection' style="padding-left: 3em;">
+    <div class="page-header" style="margin-top: 0;">
+        <div class="row">
+            <div class="col-md-6">
+                <h1 ng-bind="research.title"></h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-3"><strong>Title</strong></div>
+                <div class="col-md-6" ng-bind="research.title"></div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-3"><strong>Content</strong></div>
+                <div class="col-md-6" ng-bind="research.content"></div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-3"><strong>image</strong></div>
+                <div class="col-md-6"><img ng-src="{{research.image}}"  class="img-thumbnail user-profile-picture"></div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-md-3"><strong>Created</strong></div>
+                <div class="col-md-6" ng-bind="research.created_at"></div>
+            </div>
+            <hr />
+        </div>
+    </div>
+    <div style="
+        text-align: center;
+        margin-top: 2em;
+    ">
+        <a class="btn btn-primary" ui-sref="admin.research-edit({researchId: research._id})" style="margin-right: 12em;">
+          Edit Research <i class="glyphicon glyphicon-edit" style="margin-left: 1em;"></i>
+        </a>
+        <a class="btn btn-primary" ng-click="remove();" ng-if="research._id !== authentication.research._id">
+          Delete Research <i class="glyphicon glyphicon-trash" style="margin-left: 1em;"></i>
+        </a>
+      </div>
+</section>

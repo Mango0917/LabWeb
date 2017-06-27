@@ -1,0 +1,54 @@
+<section>
+  <div class="page-header">
+    <div class="row">
+      <div class="col-md-6">
+		  <h1>{{appointment.participant.name}}'s Appointment</h1>
+      </div>
+      <div class="col-md-4">
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="appointmentSection col-md-8">
+      <div class="row">
+        <div class="col-md-3"><strong>Date & Time:</strong></div>
+		<div class="col-md-6">{{appointment.prettyDate}}</div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Location:</strong></div>
+		<div class="col-md-6">{{appointment.location}}</div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Duration:</strong></div>
+		<div class="col-md-6">{{appointment.duration}} minutes</div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Participant:</strong></div>
+        <div class="col-md-6" ng-bind="appointment.participant.name"></div>
+      </div>
+      <hr/>
+      <div class="row">
+        <div class="col-md-3"><strong>Experiment:</strong></div>
+		<div class="col-md-6">{{appointment.experiment.experiment_name}}: {{appointment.experiment.experiment_conditions}}</div>
+      </div>
+      <hr/>
+	  <div class="row">
+        <div class="col-md-3"><strong>Comments:</strong></div>
+		<div class="col-md-6">{{appointment.comments}}</div>
+	  </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+	<a class="btn btn-primary" ui-sref="admin.appointment-edit({appointmentId: appointment._id})">
+		Edit <i class="glyphicon glyphicon-edit"></i>
+	</a>
+	<a class="btn btn-primary" ng-click="remove();">
+		Delete <i class="glyphicon glyphicon-trash"></i>
+	</a>
+  </div>
+</section>

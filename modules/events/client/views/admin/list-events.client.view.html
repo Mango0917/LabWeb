@@ -1,0 +1,33 @@
+<section>
+  <div class="page-header">
+    <div class="row">
+      <div class="col-md-4">
+        <h1>Moments</h1>
+      </div>
+      <div class="col-md-4" style="margin-top: 2em">
+        <input class="form-control col-md-4" type="text" ng-model="search" placeholder="Search" ng-change="figureOutItemsToDisplay()" />
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1">
+    <div class="eventSection row">
+      <div class="col-xs-8 col-xs-offset-2 col-sm-10 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-12 col-lg-offset-1">
+        <div ng-repeat="event in pagedItems" ui-sref="admin.event({eventId: event._id})" class="eventMember">
+          <h4 ng-bind="event.title"></h4>
+          <p ng-bind="event.created_at"></p>
+          <div class="eventImgContainer">
+            <img class ="eventImg" ng-src= {{event.image}}>
+          </div>
+          <p class = "description">{{event.description}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <pagination boundary-links="true" max-size="8" items-per-page="itemsPerPage" total-items="filterLength" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+
+  <div class="container">
+	<div class="row">
+		<button class="btn-primary" ui-sref="authentication.addEvent">Add Moment</button>
+	</div>
+  </div>
+</section>

@@ -1,0 +1,17 @@
+<section  ng-controller="TeamController">
+  <h1 class = "spaced-out header">Lab Members</h1>
+  <i class="header">At SoundPad, our lab members work together to acheive our lab's mission!</i>
+
+  <!--Display team member photos and names-->
+  <div class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-10 col-md-offset-1">
+	<div class="teamSection row">
+		<div ng-repeat= "member in members" class="teamMember">
+			<div class="profileImgContainer">
+				<img class ="profileImg" ng-src= {{member.profileImageURL}}>
+			</div>
+			<p class = "name">{{member.displayName}}</p>
+		</div>
+	</div>
+  </div>
+  
+</section>

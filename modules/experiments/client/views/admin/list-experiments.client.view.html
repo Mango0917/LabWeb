@@ -1,0 +1,32 @@
+<section>
+  <div class="page-header">
+    <div class="row">
+      <div class="col-md-4">
+        <h1>Experiments</h1>
+      </div>
+      <div class="col-md-4" style="margin-top: 2em">
+        <input class="form-control col-md-4" type="text" ng-model="search" placeholder="Search by any attribute" ng-change="figureOutItemsToDisplay()" />
+      </div>
+      <div class="col-md-4" style="margin-top: 2em">
+        <input class="form-control col-md-4" type="text" ng-model="search2" placeholder="Filter by experiment name" ng-change="figureOutItemsToDisplay()" />
+      </div>
+      <div class="col-md-4" style="margin-top: 2em">
+        <input class="form-control col-md-4" type="text" ng-model="search3" placeholder="Filter by experiment condition" ng-change="figureOutItemsToDisplay()" />
+      </div>
+    </div>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="experiment in pagedItems" ui-sref="admin.experiment({experimentId: experiment._id})" class="list-group-item">
+      <h4 class="list-group-item-heading" >{{experiment.experiment_name}}</h4>
+        <h6 ng-repeat="exp_condition in experiment.experiment_conditions">{{exp_condition}}</h6>
+      <p class="list-group-item-text small" ng-show="experiment.requires_eyeglasses"> Requires eyeglasses</p>
+    </a>
+  </div>
+
+  <pagination boundary-links="true" max-size="8" items-per-page="itemsPerPage" total-items="filterLength" ng-model="currentPage" ng-change="pageChanged()"></pagination>
+  <div class="container">
+	<div class="row">
+		<button class="btn-primary" ui-sref="authentication.addExperiment">Add Experiment</button>
+	</div>
+  </div>
+</section>
