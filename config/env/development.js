@@ -4,10 +4,10 @@ var defaultEnvConfig = require('./default');
 
 module.exports = {
   db: {
-      uri: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://heroku_z0hzpks9:1abrhj7ashja83tco6ivaprc8b@ds139352.mlab.com:39352/heroku_z0hzpks9' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/mean-dev',
+      uri: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://soundpadlab:soundpadlab313a@ds139352.mlab.com:39352/heroku_z0hzpks9' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/mean-dev',
     options: {
-        user: 'heroku_z0hzpks9',
-        pass: '1abrhj7ashja83tco6ivaprc8b'
+        user: 'soundpadlab',
+        pass: 'soundpadlab313a'
     },
     // Enable mongoose debug mode
     debug: process.env.MONGODB_DEBUG || false
