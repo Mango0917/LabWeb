@@ -1,6 +1,6 @@
 'use strict';
 
-//var defaultEnvConfig = require('./default');
+var defaultEnvConfig = require('./default');
 //var mongoose = require('mongoose');
 //var dbURI = "mongodb://admin:admin123@ds139342.mlab.com:39342/heroku_9fdfk836";
 //if (process.env.NODE_ENV === 'production') {
