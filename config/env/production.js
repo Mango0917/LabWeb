@@ -16,8 +16,8 @@ module.exports = {
       {
           uri: 'mongodb://admin:admin123@ds139342.mlab.com:39342/heroku_9fdfk836',
     options: {
-        user: 'admin',
-        pass: 'admin123'
+        user: '',
+        pass: ''
     },
     // Enable mongoose debug mode
     debug: process.env.MONGODB_DEBUG || false
