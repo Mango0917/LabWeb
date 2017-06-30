@@ -1,5 +1,10 @@
 'use strict';
-
+var mongoose = require('mongoose');
+var dbURI = "mongodb://admin:admin123@ds139342.mlab.com:39342/heroku_9fdfk836";
+if (process.env.NODE_ENV === 'production') {
+    dbURI = process.env.MONGOLAB_URI;
+}
+mongoose.connect(dbURI);
 module.exports = {
   secure: {
     ssl: true,
@@ -7,7 +12,7 @@ module.exports = {
     certificate: './config/sslcerts/cert.pem'
   },
   port: process.env.PORT || 8443,
-  db:'mongodb://admin:admin123@ds139342.mlab.com:39342/heroku_9fdfk836',
+  //db:'mongodb://admin:admin123@ds139342.mlab.com:39342/heroku_9fdfk836',
       /*{
       uri: process.env.MONGOHQ_URL || process.env.MONGOLAB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/mean',
     options: {
