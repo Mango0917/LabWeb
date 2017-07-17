@@ -6,7 +6,7 @@ require "rake/thread_pool"
 require "rake/thread_history_display"
 require "rake/trace_output"
 require "rake/win32"
-
+require 'sprockets/railtie'
 module Rake
 
   CommandLineOptionError = Class.new(StandardError)

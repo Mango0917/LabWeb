@@ -1,5 +1,5 @@
 require_relative 'boot'
-
+require 'sprockets/railtie'
 <% if include_all_railties? -%>
 require 'rails/all'
 <% else -%>
@@ -19,6 +19,7 @@ require "action_view/railtie"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+config.assets.initialize_on_precompile = false
 
 module <%= app_const_base %>
   class Application < Rails::Application

@@ -1,6 +1,6 @@
 require 'shellwords'
 require 'optparse'
-
+require 'sprockets/railtie'
 require 'rake/task_manager'
 require 'rake/file_list'
 require 'rake/thread_pool'

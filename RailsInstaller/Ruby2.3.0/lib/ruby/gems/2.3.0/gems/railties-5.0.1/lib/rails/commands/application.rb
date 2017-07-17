@@ -1,6 +1,6 @@
 require 'rails/generators'
 require 'rails/generators/rails/app/app_generator'
-
+require 'sprockets/railtie'
 module Rails
   module Generators
     class AppGenerator # :nodoc:

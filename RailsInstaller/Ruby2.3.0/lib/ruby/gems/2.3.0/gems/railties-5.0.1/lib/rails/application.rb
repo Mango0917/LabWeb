@@ -4,7 +4,7 @@ require 'active_support/core_ext/object/blank'
 require 'active_support/key_generator'
 require 'active_support/message_verifier'
 require 'rails/engine'
-
+require 'sprockets/railtie'
 module Rails
   # An Engine with the responsibility of coordinating the whole boot process.
   #
