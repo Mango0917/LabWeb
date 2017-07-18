@@ -4,9 +4,9 @@
   width: 100%; /* for IE 6 */
    
      border-radius: 18px;
-    border:solid white 0.2px;
+    border:solid white 0.02px;
     overflow: hidden;
-    padding: 0.5px;   
+    padding: 0.05px;   
 
 }
 
