@@ -3,8 +3,8 @@
   position: relative;
   width: 100%; /* for IE 6 */
    
-    border-radius: 18px;
-    border:solid white 0.002px;
+    border-radius: 12px;
+    border:solid white 0.000002px;
     overflow: hidden;
      
 
