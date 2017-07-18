@@ -1,5 +1,7 @@
 @media (min-width: 992px) {
-  
+     .nav-users {
+    position: fixed;
+}  
 }
 .social-account-container {
   display: inline-block;
