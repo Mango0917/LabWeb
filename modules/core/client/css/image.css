@@ -3,10 +3,10 @@
   position: relative;
   width: 100%; /* for IE 6 */
    
-     border-radius: 8px;
-    border:solid white 1px;
+     border-radius: 18px;
+    border:solid white 0.2px;
     overflow: hidden;
-    padding: 2px;   
+    padding: 0.5px;   
 
 }
 
