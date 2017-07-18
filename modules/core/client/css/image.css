@@ -2,6 +2,7 @@
 {
   position: relative;
   width: 100%; /* for IE 6 */
+   border-radius: 25px;
 }
 
 .image h2
