@@ -28,7 +28,7 @@
   color: #1e3b78; }
 
 .nav > li > a:hover {
-  background-color: darkblue; }
+  background-color: rgba(255, 255, 255, 0.4); }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .active > a {
   background-image: none; }
