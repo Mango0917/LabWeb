@@ -1,6 +1,6 @@
-﻿.navbar {
+.navbar {
   border-bottom: 2px solid rgba(10, 30, 70, 0.6);
-  background: rgba(255, 255, 255, 0); }
+  background: #f2f6f7; }
 
 .navbar-header > a {
   max-width: 90px;
@@ -10,7 +10,7 @@
     padding: 20px 0; }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
-  background-color: cadetblue;
+  background-color: #c8c8c8;
   background-image: none; }
 
 .nav > li > a.dropdown-toggle {
@@ -28,7 +28,7 @@
   color: #1e3b78; }
 
 .nav > li > a:hover {
-  background-color: darkblue; }
+  background-color: rgba(255, 255, 255, 0.4); }
 
 .navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .active > a {
   background-image: none; }

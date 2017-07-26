@@ -31,13 +31,13 @@ var UserSchema = new Schema({
   firstName: {
     type: String,
     trim: true,
-    default: '',
+    default: 'abc',
     validate: [validateLocalStrategyProperty, 'Please fill in your first name']
   },
   lastName: {
     type: String,
     trim: true,
-    default: '',
+    default: 'abc',
     validate: [validateLocalStrategyProperty, 'Please fill in your last name']
   },
   displayName: {
@@ -49,7 +49,7 @@ var UserSchema = new Schema({
     unique: true,
     lowercase: true,
     trim: true,
-    default: '',
+    default: 'abc',
     validate: [validateLocalStrategyEmail, 'Please fill a valid email address']
   },
   username: {
@@ -61,7 +61,7 @@ var UserSchema = new Schema({
   },
   password: {
     type: String,
-    default: ''
+    default: 'abc'
   },
   salt: {
     type: String
