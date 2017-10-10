@@ -10,13 +10,6 @@
                         <p class="help-block error-text" ng-message="required">title is required.</p>
                     </div>
                 </div>
-				<div class="form-group" show-errors>
-                    <label for="created">Created</label>
-                    <input type="Date" id="created" name="created" class="form-control" ng-model="credentials.created" placeholder="Created" required>
-                    <div ng-messages="publicationForm.created.$error" role="alert">
-                        <p class="help-block error-text" ng-message="required">Creation Date is required.</p>
-                    </div>
-                </div>
                 <div class="form-group" show-errors>
                     <label for="information">Information</label>
                     <input type="text" id="information" name="information" class="form-control" ng-model="publication.information" placeholder="information" required>

@@ -40,7 +40,6 @@ exports.update = function (req, res) {
     
   var publication = req.publication;
   publication.title = req.body.title;
-  publication.Date_of_Publication = req.body.Date_of_Publication;
   publication.information = req.body.information;
   publication.url = req.body.url;
   
