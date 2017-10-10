@@ -18,6 +18,10 @@ var PublicationSchema = new Schema({
     type: Date,
     default: Date.now()
   },
+  Date_of_Publication:{
+      type: Date,
+      required: true
+  },
   
   information: {
     type: String,
