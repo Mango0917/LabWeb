@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 //Controller for non-Admins
 angular.module('publications').controller('PublicationPublicController', ['$scope', '$state', 'publicationResolve',

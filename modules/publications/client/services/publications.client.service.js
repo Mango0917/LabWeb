@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 //Queries through publication IDs for non-Admin use
 angular.module('publications').factory('publicationsPublic', ['$resource',

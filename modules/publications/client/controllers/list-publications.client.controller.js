@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 //Get controller for non-Admin
 angular.module('publications').controller('PublicationListPublicController', ['$scope', '$filter', 'publicationsPublic',

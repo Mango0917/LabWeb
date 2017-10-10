@@ -1,3 +1,4 @@
+
 'use strict';
 
 // Configuring the Publications module to be a part of the menu

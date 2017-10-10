@@ -4,5 +4,5 @@
 angular.module('publications').config(['$stateProvider',
   function ($stateProvider) {
   }
-]);
+]); 
 

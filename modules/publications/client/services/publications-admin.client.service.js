@@ -1,4 +1,4 @@
-'use strict';
+ 'use strict';
 
 //Queries through publication IDs for Admin use
 angular.module('publications.admin').factory('publicationsAdmin', ['$resource',
