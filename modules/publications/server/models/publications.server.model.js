@@ -18,6 +18,9 @@ var PublicationSchema = new Schema({
     type: Date,
     default: Date.now()
   },
+  dop: {
+      type: Date
+  },
   
   information: {
     type: String,
