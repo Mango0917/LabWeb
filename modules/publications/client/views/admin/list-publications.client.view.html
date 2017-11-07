@@ -11,8 +11,8 @@
   </div>
   <div class="list-group">
       <a ng-repeat="publication in pagedItems" ui-sref="admin.publication({publicationId: publication._id})" class="list-group-item">
-          <h4 class="list-group-item-heading" ng-bind="publication.title" ng-bind="(publication.dop)"></h4>
-		
+          <h4 class="list-group-item-heading" ng-bind="publication.title"></h4>
+		  <p class="list-group-item-text" ng-bind="publication.dop"></p>	
           <p class="list-group-item-text" ng-bind="publication.information"></p>
       </a>
   </div>
