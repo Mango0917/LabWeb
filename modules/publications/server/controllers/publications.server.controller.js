@@ -79,7 +79,7 @@ exports.delete = function (req, res) {
  * List of publications
  */
 exports.list = function (req, res) {
-  Publication.find().sort('-created').exec(function (err, publications) {
+  Publication.find().sort('-dop').exec(function (err, publications) {
         
     if (err) {
       console.log(err);
